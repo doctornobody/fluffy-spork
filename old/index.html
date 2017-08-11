@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>The web site of 37</title>
+  <!-- The style.css file allows you to change the look of your web pages.
+  If you include the next line in all your web pages, they will all share the same look.
+  This makes it easier to make new pages for your site. -->
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body onLoad="volaco()">
+<script>
+function volaco(){
+  var x = 0;
+  var y = 0;
+  haluz = "none";
+  myInterval = setInterval(function(){
+  /*
+  if (haluz=="none") {
+  haluz = "inline";
+  }
+  else {
+  haluz = "none";
+  }
+
+  document.getElementbyId("thing").style.display = "none";
+  */
+  if (x >= 300) {
+  x = 0;
+  y = 0;
+  }
+  else {
+  x=x+10;
+  y=y+10;
+  }
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.font = "16px Courier New";
+  ctx.fillStyle = "#00E100";
+  ctx.textAlign = "center";
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillText("(￣(ｴ)￣)", x, y);
+  },1000);
+}
+</script>
+<div id="pic">
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #00E100;">
+</canvas>
+
+</div>
+
+  <div class="content" id="torso">
+  <p>
+Hello and welcome to my page. I would like this site to be as true to original geocities websites as possible. So I am just recreating the experience from my memory.
+  </p>
+
+  <p>
+Obviously I decided to add a few things and make it more of my own... and for now there aren't gonna be any flaming skulls, sorry :/
+  </p>
+
+  <p>
+Sorry if you hate my code, it's terrible. I am doing what I can. Anyway, see you later :)
+  </p>
+
+  <p>
+  if you wanna contact me try kuromaru99(at)gmail or kuromaru@jabbim.sk (XMPP, not mail)<br>
+  and if you believe the government is out there to get you, feel free use my <a href="../publickey.txt">public pgp key</a>
+  </p>
+  </div>
+
+  <div class="content" style="margin-top: 20px" id="sidebar">
+  <ul>
+  <li> <a href="http://www.google.co.uk"><span id="thing">></span> Google</a> </li>
+  <li> <a href="../publickey.txt"><span id="thing">></span> public pgp key</a> </li>
+  <li> <a href="../diary/index.html"><span id="thing">></span> news</a> </li>  </ul>
+  </div>
+
+  </body>
+</html>
